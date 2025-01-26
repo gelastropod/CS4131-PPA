@@ -29,13 +29,14 @@
 
 ## Scenes
 - Main page
+![Main Page Image](mainPageImage.png "Main Page")
 - Product details
 - Company details & contact info
 - Sign up page
 - Payment page (cart system?)
 
 ## Theme
-![Theme image](theme.png "Theme")
+![Theme Image](theme.png "Theme")
 
 ## Task allocation
 ### Gun Rui

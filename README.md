@@ -34,6 +34,9 @@
 - Sign up page
 - Payment page (cart system?)
 
+## Theme
+![Theme image](Theme.png "Theme")
+
 ## Task allocation
 ### Gun Rui
 - Art

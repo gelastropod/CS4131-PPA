@@ -28,7 +28,7 @@
 - Individual reflections
 
 ## Scenes
-- Main page
+- Main page  
 ![Main Page Image](mainPageImage.png "Main Page")
 - Product details
 - Company details & contact info

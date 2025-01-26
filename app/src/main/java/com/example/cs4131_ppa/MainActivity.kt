@@ -22,7 +22,6 @@ import com.example.cs4131_ppa.pages.SignUpPageClass
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
             CS4131PPATheme {
                 Surface(

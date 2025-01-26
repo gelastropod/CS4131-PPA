@@ -4,54 +4,51 @@ import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Shapes
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.nestedscroll.NestedScrollSource.Companion.SideEffect
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalView
+import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = darkColorScheme(
-    primary = DarkPrimary,
-    secondary = Accent,
-    background = DarkPrimary
+    primary = Color(0xffCFD8DC),
+    onPrimary = Color(0xff212121),
+    secondary = Color(0xff795548),
+    onSecondary = Color(0xff757575),
+    background = Color(0xff455A64),
+    surface = Color(0xff607D8B)
 )
 
-private val LightColorScheme = lightColorScheme(
-    primary = LightPrimary,
-    secondary = Accent,
-    background = LightPrimary
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+private val LightColorScheme = lightColorScheme( //TODO: Customise light theme
+    primary = Color(0xffCFD8DC),
+    onPrimary = Color(0xff212121),
+    secondary = Color(0xff795548),
+    onSecondary = Color(0xff757575),
+    background = Color(0xff455A64),
+    surface = Color(0xff607D8B)
 )
 
 @Composable
-fun CS4131PPATheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
-    content: @Composable () -> Unit
-) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
+fun CS4131PPATheme(darkTheme : Boolean = isSystemInDarkTheme(), content : @Composable () -> Unit) {
+    //val useDynamicColours = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
+    val useDynamicColours = false
 
+    val c = when {
+        //useDynamicColours && darkTheme -> dynamicDarkColorScheme(LocalContext.current)
+        //useDynamicColours && !darkTheme -> dynamicLightColorScheme(LocalContext.current)
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
     }
 
     MaterialTheme(
-        colorScheme = colorScheme,
+        colorScheme = c,
         typography = Typography,
         content = content
     )

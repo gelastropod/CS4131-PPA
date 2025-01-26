@@ -13,6 +13,14 @@
 - Use everything and more!!!11!!11!
 - Add page for successful payment
 - Filter and search functionality
+- 20 sample items:
+  - Name
+  - Image
+  - Description
+  - Category
+  - Brand
+  - Size
+  - Price
 
 ## Report
 - Summary

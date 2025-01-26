@@ -4,14 +4,16 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.cs4131_ppa.pages.CompanyDetailsPageClass
 import com.example.cs4131_ppa.ui.theme.CS4131PPATheme
+import com.example.cs4131_ppa.pages.MainPageClass
+import com.example.cs4131_ppa.pages.PaymentPageClass
+import com.example.cs4131_ppa.pages.ProductDetailsPageClass
+import com.example.cs4131_ppa.pages.SignUpPageClass
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,29 +21,21 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CS4131PPATheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                MainApp()
             }
         }
     }
 }
 
+// Main App
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CS4131PPATheme {
-        Greeting("Android")
+fun MainApp() {
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "homePage") {
+        composable("homePage") { MainPageClass.MainPage(navController) }
+        composable("productDetailsPage") { ProductDetailsPageClass.ProductDetailsPage(navController) }
+        composable("companyDetailsPage") { CompanyDetailsPageClass.CompanyDetailsPage(navController) }
+        composable("signUpPage") { SignUpPageClass.SignUpPage(navController) }
+        composable("paymentPage") { PaymentPageClass.PaymentPage(navController) }
     }
 }

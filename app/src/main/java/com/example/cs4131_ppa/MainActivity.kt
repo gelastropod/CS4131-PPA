@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            CS4131PPATheme {
+            CS4131PPATheme (dynamicColor = false) {
                 MainApp()
             }
         }

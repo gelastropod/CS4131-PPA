@@ -35,7 +35,7 @@
 - Payment page (cart system?)
 
 ## Theme
-![Theme image](Theme.png "Theme")
+![Theme image](theme.png "Theme")
 
 ## Task allocation
 ### Gun Rui

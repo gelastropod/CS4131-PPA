@@ -99,6 +99,8 @@ fun TitleBarTopContent(navController: NavController) {
 
 @Composable
 fun TitleBarBottomContent(navController: NavController) {
+    val route = navController.currentBackStackEntry?.destination?.route
+
     Row (
         modifier = Modifier
             .fillMaxWidth()
@@ -114,7 +116,7 @@ fun TitleBarBottomContent(navController: NavController) {
             shape = RectangleShape,
             contentPadding = PaddingValues(0.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
-            onClick = {navController.navigate("companyDetailsPage")}
+            onClick = {if (route != "companyDetailsPage") navController.navigate("companyDetailsPage")}
         ) {
             Column (
                 modifier = Modifier
@@ -132,7 +134,7 @@ fun TitleBarBottomContent(navController: NavController) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(4.dp)
-                        .background(Primary)
+                        .background(if (route == "companyDetailsPage") Primary else Accent)
                 )
             }
         }
@@ -143,7 +145,7 @@ fun TitleBarBottomContent(navController: NavController) {
             shape = RectangleShape,
             contentPadding = PaddingValues(0.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
-            onClick = {navController.navigate("homePage")}
+            onClick = {if (route != "homePage") navController.navigate("homePage")}
         ) {
             Column (
                 modifier = Modifier
@@ -161,7 +163,7 @@ fun TitleBarBottomContent(navController: NavController) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(4.dp)
-                        .background(Primary)
+                        .background(if (route == "homePage") Primary else Accent)
                 )
             }
         }
@@ -172,7 +174,7 @@ fun TitleBarBottomContent(navController: NavController) {
             shape = RectangleShape,
             contentPadding = PaddingValues(0.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
-            onClick = {navController.navigate("signUpPage")}
+            onClick = {if (route != "signUpPage") navController.navigate("signUpPage")}
         ) {
             Column (
                 modifier = Modifier
@@ -190,7 +192,7 @@ fun TitleBarBottomContent(navController: NavController) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(4.dp)
-                        .background(Primary)
+                        .background(if (route == "signUpPage") Primary else Accent)
                 )
             }
         }

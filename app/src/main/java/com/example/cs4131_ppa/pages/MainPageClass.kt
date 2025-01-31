@@ -1,6 +1,7 @@
 package com.example.cs4131_ppa.pages
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -42,12 +43,13 @@ class MainPageClass {
                 LazyColumn (
                     modifier = Modifier
                         .fillMaxSize()
-                        .verticalScroll(rememberScrollState()),
+                        //.verticalScroll(rememberScrollState())
+                        .height(100.dp),
                     verticalArrangement = Arrangement.spacedBy(20.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     items(productList) { productPair ->
-                        productCard(navController, productPair)
+                        ProductCard(navController, productPair)
                     }
                 }
             }
@@ -56,7 +58,7 @@ class MainPageClass {
 }
 
 @Composable
-fun productCard(navController: NavController, productPair: ProductPair) {
+fun ProductCard(navController: NavController, productPair: ProductPair) {
     Row (
         modifier = Modifier
             .fillMaxWidth()

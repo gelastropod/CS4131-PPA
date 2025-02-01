@@ -52,7 +52,7 @@ class SignUpPageClass {
                         value = usernameState.value,
                         onValueChange = { newText -> usernameState.value = newText },
                         label = { Text("Enter Username") },
-                        placeholder = { Text("Username ...") }
+                        placeholder = { Text("Username...") }
                     )
                     TextField(
                         value = passwordState.value,

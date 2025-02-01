@@ -35,6 +35,24 @@ private val LightColorScheme = lightColorScheme( //TODO: Customise light theme
     surface = Color(0xff607D8B)
 )
 
+private val altColourSchemeDark = darkColorScheme(
+    primary = Color(0xffFFECB3),
+    onPrimary = Color(0xff212121),
+    secondary = Color(0xff448AFF),
+    onSecondary = Color(0xff757575),
+    background = Color(0xffFFA000),
+    surface = Color(0xffFFC107)
+)
+
+private val altColourSchemeLight = darkColorScheme(
+    primary = Color(0xffFFECB3),
+    onPrimary = Color(0xff212121),
+    secondary = Color(0xff448AFF),
+    onSecondary = Color(0xff757575),
+    background = Color(0xffFFA000),
+    surface = Color(0xffFFC107)
+)
+
 @Composable
 fun CS4131PPATheme(darkTheme : Boolean = isSystemInDarkTheme(), content : @Composable () -> Unit) {
     //val useDynamicColours = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
@@ -43,8 +61,9 @@ fun CS4131PPATheme(darkTheme : Boolean = isSystemInDarkTheme(), content : @Compo
     val c = when {
         //useDynamicColours && darkTheme -> dynamicDarkColorScheme(LocalContext.current)
         //useDynamicColours && !darkTheme -> dynamicLightColorScheme(LocalContext.current)
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+        //darkTheme -> DarkColorScheme
+        darkTheme -> altColourSchemeDark
+        else -> altColourSchemeLight
     }
 
     MaterialTheme(

@@ -63,6 +63,7 @@ class CompanyDetailsPageClass {
                             )
                             Text(
                                 text = stringResource(id = R.string.company_desc),
+                                style = MaterialTheme.typography.bodyMedium,
                                 textAlign = TextAlign.Justify,
                                 modifier = Modifier.fillMaxWidth()
                             )
@@ -89,6 +90,7 @@ class CompanyDetailsPageClass {
                             )
                             Text(
                                 text = stringResource(id = R.string.contact_info),
+                                style = MaterialTheme.typography.bodyMedium,
                                 textAlign = TextAlign.Justify,
                                 modifier = Modifier.fillMaxWidth()
                             )

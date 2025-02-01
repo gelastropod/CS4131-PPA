@@ -15,7 +15,7 @@ val Typography = Typography(
         fontSize = 16.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
-        color = Color(0xff757575)
+        color = Color(0xff212121)
 
     ),
     titleLarge = TextStyle(
@@ -23,7 +23,8 @@ val Typography = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 20.sp,
         lineHeight = 28.sp,
-        letterSpacing = 0.sp
+        letterSpacing = 0.sp,
+        color = Color(0xFF757575)
     )
     /*,
     labelSmall = TextStyle(

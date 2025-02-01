@@ -53,7 +53,7 @@ class CompanyDetailsPageClass {
 
                             Text(
                                 text = stringResource(id = R.string.tagline),
-                                style = MaterialTheme.typography.titleLarge,
+                                style = MaterialTheme.typography.titleMedium,
                                 textAlign = TextAlign.Center,
                                 fontWeight = FontWeight.Bold
 
@@ -63,7 +63,7 @@ class CompanyDetailsPageClass {
                             )
                             Text(
                                 text = stringResource(id = R.string.company_desc),
-                                style = MaterialTheme.typography.bodyMedium,
+                                //style = MaterialTheme.typography.bodyMedium,
                                 textAlign = TextAlign.Justify,
                                 modifier = Modifier.fillMaxWidth()
                             )
@@ -81,7 +81,7 @@ class CompanyDetailsPageClass {
                         ) {
                             Text(
                                 text = stringResource(id = R.string.contact_title),
-                                style = MaterialTheme.typography.titleLarge,
+                                style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Bold
 
                             )
@@ -90,7 +90,7 @@ class CompanyDetailsPageClass {
                             )
                             Text(
                                 text = stringResource(id = R.string.contact_info),
-                                style = MaterialTheme.typography.bodyMedium,
+                                //style = MaterialTheme.typography.bodyMedium,
                                 textAlign = TextAlign.Justify,
                                 modifier = Modifier.fillMaxWidth()
                             )

@@ -21,6 +21,14 @@
   - Brand
   - Size
   - Price
+- Validation checks:
+  - Username:
+    - Length from 3 to 15 (inclusive)
+    - No spaces or special characters
+    - Unique
+  - Password:
+    - Length at least 8
+    - Contains at least 1 uppercase, lowercase, digit and special character
 
 ## Report
 - Summary

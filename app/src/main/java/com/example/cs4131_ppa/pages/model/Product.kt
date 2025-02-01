@@ -1,19 +1,24 @@
 package com.example.cs4131_ppa.pages.model
 
 class Product(
-    name: String,
-    imagePath: String,
-    description: String,
-    category: String,
-    brand: String,
-    size: Float,
-    price: Float
+    var name: String,
+    var imagePath: String,
+    var description: String,
+    var category: String,
+    var brand: String,
+    var size: Float,
+    var price: Float,
+    var rating: Float
 ) {
-    var name: String? = null
-    var imagePath: String? = null
-    var description: String? = null
-    var category: String? = null
-    var brand: String? = null
-    var size: Float? = null
-    var price: Float? = null
+    companion object {
+        var numProductTypes: Int = 0
+        var productList: ArrayList<Product> = arrayListOf()
+    }
+    var productID: Int
+
+    init {
+        productID = numProductTypes
+        productList.add(this)
+        numProductTypes++
+    }
 }

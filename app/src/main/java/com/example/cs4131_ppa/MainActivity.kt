@@ -5,14 +5,20 @@ import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.cs4131_ppa.pages.CompanyDetailsPageClass
 import com.example.cs4131_ppa.ui.theme.CS4131PPATheme
 import com.example.cs4131_ppa.pages.MainPageClass
@@ -54,11 +60,39 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainApp() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "homePage") {
+    val keyboardController = LocalSoftwareKeyboardController.current
+    val focusManager = LocalFocusManager.current
+
+    NavHost(
+        navController = navController,
+        startDestination = "homePage",
+        modifier = Modifier
+            .pointerInput(Unit) {
+                detectTapGestures(onTap = {
+                    keyboardController?.hide()
+                    focusManager.clearFocus()
+                })
+            }
+    ) {
         composable("homePage") { MainPageClass.MainPage(navController) }
-        composable("productDetailsPage") { ProductDetailsPageClass.ProductDetailsPage(navController) }
+        composable(
+            "productDetailsPage/{productID}",
+            arguments = listOf(navArgument("productID") {type = NavType.StringType})
+        ) { backStackEntry ->
+            val productID = backStackEntry.arguments?.getString("productID")
+            if (productID != null) {
+                ProductDetailsPageClass.ProductDetailsPage(navController, productID.toInt())
+            }
+        }
         composable("companyDetailsPage") { CompanyDetailsPageClass.CompanyDetailsPage(navController) }
         composable("signUpPage") { SignUpPageClass.SignUpPage(navController) }
-        composable("paymentPage") { PaymentPageClass.PaymentPage(navController) }
+        composable("paymentPage/{productID}",
+            arguments = listOf(navArgument("productID") {type = NavType.StringType})
+        ) { backStackEntry ->
+            val productID = backStackEntry.arguments?.getString("productID")
+            if (productID != null) {
+                PaymentPageClass.PaymentPage(navController, productID.toInt())
+            }
+        }
     }
 }

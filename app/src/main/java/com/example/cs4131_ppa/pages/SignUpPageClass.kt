@@ -81,8 +81,7 @@ class SignUpPageClass {
                     Spacer(modifier = Modifier.height(10.dp))
                     Button(
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .height(50.dp),
+                            .fillMaxWidth(),
                         onClick = {
                             var usernamePassed: Boolean = true
                             var passwordPassed: Boolean = true

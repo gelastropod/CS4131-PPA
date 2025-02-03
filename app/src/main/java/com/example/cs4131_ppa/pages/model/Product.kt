@@ -4,7 +4,6 @@ import android.content.res.Resources
 import com.example.cs4131_ppa.R
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
-import java.util.Locale
 
 typealias ProductPair = Pair<Product, Product>
 
@@ -15,7 +14,7 @@ class Product(
     var description: String,
     var category: String,
     var brand: String,
-    var size: Float,
+    var size: String,
     var price: Float,
     var rating: Float,
     var productID: Int
@@ -26,7 +25,7 @@ class Product(
 
         private fun dummyProduct(): Product {
             return Product(
-                "", "", "", "", "", 0f, 0f, 0f, -1
+                "", "", "", "", "", "", 0f, 0f, -1
             )
         }
 
@@ -41,31 +40,18 @@ class Product(
             }
         }
 
-        fun returnFilteredProductList(filter: String): ArrayList<Product> {
-            if (filter.isBlank())
-                return productList
-
-            val filteredProductList: ArrayList<Product> = arrayListOf()
-
-            for (product in productList)
-                if (product.name.lowercase(Locale.ROOT).contains(filter.lowercase(Locale.ROOT).toRegex()))
-                    filteredProductList.add(product)
-
-            return filteredProductList
-        }
-
-        fun returnPairProducts(filteredProductList: ArrayList<Product>): ArrayList<ProductPair> {
+        fun returnPairProducts(): ArrayList<ProductPair> {
             val productPairList: ArrayList<ProductPair> = arrayListOf()
 
-            for (i in 0..<(filteredProductList.size - 1) step 2) {
-                val firstProduct = filteredProductList[i]
-                val secondProduct = filteredProductList[i + 1]
+            for (i in 0..<(productList.size - 1) step 2) {
+                val firstProduct = productList[i]
+                val secondProduct = productList[i + 1]
                 val productPair = ProductPair(firstProduct, secondProduct)
                 productPairList.add(productPair)
             }
 
-            if (filteredProductList.size % 2 == 1) {
-                val firstProduct = filteredProductList[filteredProductList.size - 1]
+            if (productList.size % 2 == 1) {
+                val firstProduct = productList[productList.size - 1]
                 val secondProduct = dummyProduct()
                 val productPair = ProductPair(firstProduct, secondProduct)
                 productPairList.add(productPair)

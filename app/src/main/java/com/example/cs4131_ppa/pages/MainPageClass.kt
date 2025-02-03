@@ -15,6 +15,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -32,7 +33,7 @@ import com.example.cs4131_ppa.pages.components.TitleBarClass
 import com.example.cs4131_ppa.pages.model.Product
 import com.example.cs4131_ppa.pages.model.ProductPair
 
-var itemHeight = 300
+var itemHeight = 350
 
 class MainPageClass {
     companion object {
@@ -151,14 +152,16 @@ fun CardContent(product: Product)
             text = product.name,
             modifier = Modifier
                 .fillMaxWidth()
+                .height(100.dp)
         )
+        HorizontalDivider()
         Text(
             text = "$%.2f".format(product.price),
             modifier = Modifier
                 .fillMaxWidth()
         )
         Text(
-            text = "Rating: %.1f / 5.0".format(product.rating),
+            text = "%.1f / 5.0★".format(product.rating),
             modifier = Modifier
                 .fillMaxWidth()
         )

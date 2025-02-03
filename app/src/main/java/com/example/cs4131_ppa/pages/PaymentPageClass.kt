@@ -33,7 +33,7 @@ class PaymentPageClass {
                         modifier = Modifier.fillMaxWidth(),
                         onClick = {navController.navigate("productDetailsPage/$productID")}
                     ) {
-                        Text("Return to homepage")
+                        Text("Back")
                     }
                 }
             }

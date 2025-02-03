@@ -131,6 +131,7 @@ class ProductDetailsPageClass {
                             )
                         }
                     }
+                    HorizontalDivider()
                     Button(
                         modifier = Modifier.fillMaxWidth(),
                         onClick = {navController.navigate("homePage")}

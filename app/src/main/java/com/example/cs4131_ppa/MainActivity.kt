@@ -1,5 +1,6 @@
 package com.example.cs4131_ppa
 
+import android.content.res.Resources
 import android.os.Bundle
 import android.view.View
 import androidx.activity.ComponentActivity
@@ -37,7 +38,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainApp()
+                    MainApp(resources)
                 }
             }
         }
@@ -58,7 +59,7 @@ class MainActivity : ComponentActivity() {
 
 // Main App
 @Composable
-fun MainApp() {
+fun MainApp(resources: Resources) {
     val navController = rememberNavController()
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusManager = LocalFocusManager.current
@@ -74,7 +75,7 @@ fun MainApp() {
                 })
             }
     ) {
-        composable("homePage") { MainPageClass.MainPage(navController) }
+        composable("homePage") { MainPageClass.MainPage(navController, resources) }
         composable(
             "productDetailsPage/{productID}",
             arguments = listOf(navArgument("productID") {type = NavType.StringType})

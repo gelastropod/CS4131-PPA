@@ -1,5 +1,6 @@
 package com.example.cs4131_ppa.pages
 
+import android.content.res.Resources
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -23,26 +24,19 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.cs4131_ppa.pages.components.TitleBarClass
 import com.example.cs4131_ppa.pages.model.Product
-
-typealias ProductPair = Pair<Product, Product>
+import com.example.cs4131_ppa.pages.model.ProductPair
 
 var itemHeight = 300
 
-var productList: ArrayList<ProductPair> = arrayListOf(
-    ProductPair(
-        Product(
-            "a", "uranium", "a", "a", "a", 1f, 1f, 1.0f
-        ),
-        Product(
-            "b", "uranium", "b", "b", "b", 2f, 2f, 4.9f
-        )
-    )
-)
-
 class MainPageClass {
     companion object {
+        private lateinit var productList: ArrayList<ProductPair>
+
         @Composable
-        fun MainPage(navController: NavController) {
+        fun MainPage(navController: NavController, resources: Resources) {
+            Product.loadProducts(resources)
+            productList = Product.returnPairProducts()
+
             TitleBarClass.TitleBar (navController) {
                 LazyColumn (
                     modifier = Modifier
@@ -86,7 +80,7 @@ fun ProductCard(navController: NavController, productPair: ProductPair) {
                 CardContent(productPair.first)
             }
         }
-        if (productPair.second.price >= 0f) {
+        if (productPair.second.productID >= 0) {
             ElevatedCard(
                 elevation = CardDefaults.cardElevation(
                     defaultElevation = 6.dp

@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Uranium-235",
+    "imagePath": "uranium",
+    "description": "Highly enriched sample of U235!",
+    "category": "Elements",
+    "brand": "Tew Gun Rui's lovely nuclear shop",
+    "size": 1.0,
+    "price": 150.0,
+    "rating": 5.0,
+    "productID": 0
+  },
+  {
+    "name": "Uranium-238",
+    "imagePath": "uranium",
+    "description": "Not enriched Uranium",
+    "category": "Elements",
+    "brand": "Tew Gun Rui's lovely nuclear shop",
+    "size": 1.0,
+    "price": 50.0,
+    "rating": 4.0,
+    "productID": 1
+  },
+  {
+    "name": "Plutonium-241",
+    "imagePath": "uranium",
+    "description": "Maybe enriched Plutonium",
+    "category": "Elements",
+    "brand": "Tew Gun Rui's lovely nuclear shop",
+    "size": 1.0,
+    "price": 300.0,
+    "rating": 4.5,
+    "productID": 2
+  }
+]

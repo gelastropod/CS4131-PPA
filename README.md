@@ -37,11 +37,15 @@
 
 ## Scenes
 - Main page  
-![Main Page Image](mainPageImage.png "Main Page")
-- Product details
-- Company details & contact info
-- Sign up page
-- Payment page (cart system?)
+![Home Page Image](homePageImage.png "Home Page")
+- Product details  
+![Product Details Page Image](productDetailsPageImage.png "Product Details Page")
+- Company details & contact info  
+![Company Details Page Image](companyDetailsPageImage.png "Company Details Page")
+- Sign up page  
+![Sign Up Page Image](signUpPageImage.png "Sign Up Page")
+- Payment page (cart system?)  
+![Payment Page Image](paymentPageImage.png "Payment Page")
 
 ## Theme
 ![Theme Image](theme.png "Theme")

@@ -83,8 +83,8 @@ class SignUpPageClass {
                         modifier = Modifier
                             .fillMaxWidth(),
                         onClick = {
-                            var usernamePassed: Boolean = true
-                            var passwordPassed: Boolean = true
+                            var usernamePassed= true
+                            var passwordPassed = true
                             val username = usernameState.value
                             val password = passwordState.value
 

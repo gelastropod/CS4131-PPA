@@ -29,11 +29,13 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.cs4131_ppa.R
 import com.example.cs4131_ppa.pages.components.TitleBarClass
+import com.example.cs4131_ppa.pages.model.Product
 
 class ProductDetailsPageClass {
     companion object {
         @Composable
         fun ProductDetailsPage(navController: NavController, productID: Int) {
+            var product = Product.getProduct(productID)
             TitleBarClass.TitleBar (navController) {
                 Column(
                     modifier = Modifier
@@ -60,28 +62,28 @@ class ProductDetailsPageClass {
 
                         ) {
                             Text(
-                                text = "Elements", //TODO: implement programmatic category
+                                text = product.category, //TODO: implement programmatic category
                                 modifier = Modifier
                                     .padding(5.dp)
                             )
                         }
                     }
                     Text(
-                        text = "Uranium-235", //TODO: implement programmatic name
+                        text = product.name, //TODO: implement programmatic name
                         style = MaterialTheme.typography.titleLarge,
                         textAlign = TextAlign.Left,
                         modifier = Modifier.fillMaxWidth()
                     )
 
                     Text(
-                        text = "$150.00",
+                        text = "$%.2f".format(product.price),
                         style = MaterialTheme.typography.titleMedium,
                         textAlign = TextAlign.Left,
                         modifier = Modifier.fillMaxWidth()
                     )
                     HorizontalDivider()
                     Text(
-                        text = "Highest grade enriched uranium. Perfect for hobbyist nuclear projects!", //TODO: implement programmatic descriptions
+                        text = product.description, //TODO: implement programmatic descriptions
                         textAlign = TextAlign.Left,
                         modifier = Modifier.fillMaxWidth()
                     )
@@ -118,12 +120,12 @@ class ProductDetailsPageClass {
                                 modifier = Modifier.padding(2.dp)
                             )
                             Text(
-                                text = "Brand: " + "Gelastropod Nuclear Products Inc.", //TODO: implement programmatic brand
+                                text = "Brand: " + product.brand, //TODO: implement programmatic brand
                                 textAlign = TextAlign.Left,
                                 modifier = Modifier.fillMaxWidth()
                             )
                             Text(
-                                text = "Size: " + "1 KG per unit", //TODO: implement programmatic dimensions
+                                text = "Size: " + product.size, //TODO: implement programmatic dimensions
                                 textAlign = TextAlign.Left,
                                 modifier = Modifier.fillMaxWidth()
                             )

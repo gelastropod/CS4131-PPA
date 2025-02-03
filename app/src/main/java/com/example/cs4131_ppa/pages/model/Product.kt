@@ -73,5 +73,9 @@ class Product(
 
             return productPairList
         }
+
+        fun getProduct(ID: Int) : Product {
+            return productList.get(ID)
+        }
     }
 }

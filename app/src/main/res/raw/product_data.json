@@ -31,5 +31,27 @@
     "price": 300.0,
     "rating": 4.5,
     "productID": 2
+  },
+  {
+    "name": "Plutonium-241",
+    "imagePath": "uranium",
+    "description": "Maybe enriched Plutonium",
+    "category": "Elements",
+    "brand": "Tew Gun Rui's lovely nuclear shop",
+    "size": 1.0,
+    "price": 300.0,
+    "rating": 4.5,
+    "productID": 3
+  },
+  {
+    "name": "Plutonium-241",
+    "imagePath": "uranium",
+    "description": "Maybe enriched Plutonium",
+    "category": "Elements",
+    "brand": "Tew Gun Rui's lovely nuclear shop",
+    "size": 1.0,
+    "price": 300.0,
+    "rating": 4.5,
+    "productID": 4
   }
 ]

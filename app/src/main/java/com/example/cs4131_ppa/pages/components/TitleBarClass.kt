@@ -19,12 +19,19 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.toSize
 import androidx.navigation.NavController
 import com.example.cs4131_ppa.R
 import com.example.cs4131_ppa.ui.theme.Accent
@@ -35,8 +42,9 @@ class TitleBarClass {
         @Composable
         fun TitleBar(
             navController: NavController,
-            content: @Composable () -> Unit
+            content: @Composable (height: MutableState<Size>) -> Unit
         ) {
+            val sizeState = remember { mutableStateOf(Size(0f, 0f)) }
 
             Column (
                 modifier = Modifier
@@ -53,8 +61,11 @@ class TitleBarClass {
                             .weight(1f)
                             .verticalScroll(rememberScrollState())
                             .fillMaxSize()
+                            .onSizeChanged { size: IntSize ->
+                                sizeState.value = size.toSize()
+                            }
                     ) {
-                        content()
+                        content(sizeState)
                     }
                     TitleBarBottomContent(navController)
                 }

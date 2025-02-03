@@ -42,5 +42,85 @@
     "price": 9.90,
     "rating": 4.7,
     "productID": 3
+  },
+  {
+    "name": "Bachaav - Emergency First Aid Kit",
+    "imagePath": "uranium",
+    "description": "The kit's contents enable you to treat minor wounds or provide support in case of a sprain. The wide range is available in the case so you can complete it.",
+    "category": "Accessories",
+    "brand": "Forclas",
+    "size": "15cm x 8cm",
+    "price": 14.90,
+    "rating": 4.6,
+    "productID": 4
+  },
+  {
+    "name": "Botal - 0.8L Water Bottle with Straw BLUE",
+    "imagePath": "uranium",
+    "description": "Opens instantly with one hand, with a “straight head” pipette for drinking easily, transparent, solid, in durable plastic (0.8L). BPA free.",
+    "category": "Accessories",
+    "brand": "Forclas",
+    "size": "0.8L liquid capacity",
+    "price": 9.90,
+    "rating": 4.9,
+    "productID": 5
+  },
+  {
+    "name": "Renakot - Hiking Rain Poncho",
+    "imagePath": "uranium",
+    "description": "This waterproof rain cape is the essential accessory for your hikes. Quick-to-put-on, it offers long-lasting protection from the rain, with or without a bag.",
+    "category": "Accessories",
+    "brand": "Forclas",
+    "size": "60L",
+    "price": 34.90,
+    "rating": 4.0,
+    "productID": 6
+  },
+  {
+
+    "name": "Disha - Orienteering Compass",
+    "imagePath": "uranium",
+    "description": "Featuring a 360° rotating capsule, a compass, a ruler and a wrist strap, this small oil-filled compass will guide your first orienteering steps.",
+    "category": "Accessories",
+    "brand": "Geonav",
+    "size": "5cm x 7cm",
+    "price": 5.90,
+    "rating": 4.5,
+    "productID": 7
+  },
+  {
+
+    "name": "Thaila - Hiking Backpack",
+    "imagePath": "uranium",
+    "description": "This hiking backpack offers optimal comfort with its padded waistband and ventilated back, equipped with AirCooling technology. It is equipped with secure pockets and a place for your water pouch.",
+    "category": "Bags",
+    "brand": "Quecha",
+    "size": "35L",
+    "price": 29.90,
+    "rating": 4.2,
+    "productID": 8
+  },
+  {
+
+    "name": "Ankuda - Climbing Screwgate Carabiner",
+    "imagePath": "uranium",
+    "description": "The lightest safety carabiner. Made with aerospace grade materials.",
+    "category": "Accessories",
+    "brand": "Forclas",
+    "size": "8cm",
+    "price": 14.90,
+    "rating": 4.4,
+    "productID": 9
+  },
+  {
+    "name": "Chattaan - Climbing Shoes GREY",
+    "imagePath": "uranium",
+    "description": "Are you looking for a comfortable shoe with lots of grip? With its Vibram XS grip sole, this shoe is the answer.",
+    "category": "Footwear",
+    "brand": "DIAMOND",
+    "size": "UK 8 (EU 42)",
+    "price": 99.90,
+    "rating": 4.7,
+    "productID": 10
   }
 ]

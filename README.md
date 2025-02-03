@@ -55,10 +55,15 @@
 - Art
 - Themes
 - Summary
-- Product details
-- Company details & contact info
+- Product details (DONE!)
+- Company details & contact info (DONE!)
 ### Jayden
 - Documentation
-- Main page
-- Sign up page
-- Payment page
+- Main page (DONE!)
+- Sign up page (DONE!)
+- Payment page (DONE!)
+### Current TODO:
+- Continue populating JSON mock data
+- Source images for products
+- Implement dynamic image loading for product details page
+- Generate v1.0.1 release APK

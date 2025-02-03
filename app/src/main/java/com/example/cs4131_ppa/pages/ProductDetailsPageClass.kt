@@ -131,9 +131,12 @@ class ProductDetailsPageClass {
                             )
                         }
                     }
-
-
-
+                    Button(
+                        modifier = Modifier.fillMaxWidth(),
+                        onClick = {navController.navigate("homePage")}
+                    ) {
+                        Text("Back")
+                    }
                 }
             }
         }

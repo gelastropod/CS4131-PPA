@@ -1,39 +1,54 @@
 package com.example.cs4131_ppa.pages
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.cs4131_ppa.pages.components.TitleBarClass
+import com.example.cs4131_ppa.pages.model.Product
 
 class PaymentPageClass {
     companion object {
         @Composable
-        fun PaymentPage(navController: NavController, productID: Int) {
-            TitleBarClass.TitleBar (navController) {
-                Column(
+        fun PaymentPage(navController: NavController) {
+            val productList = Product.returnPairProductsCart()
+
+            TitleBarClass.TitleBar (navController) { sizeState ->
+                LazyColumn (
                     modifier = Modifier
-                        .fillMaxSize(),
+                        .size(with (LocalDensity.current) {
+                            DpSize(sizeState.value.width.toDp(), sizeState.value.height.toDp())
+                        }),
                     verticalArrangement = Arrangement.spacedBy(20.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text(
-                        text = "Payment successful!",
-                        style = MaterialTheme.typography.titleLarge
-                    )
-                    Button(
-                        modifier = Modifier.fillMaxWidth(),
-                        onClick = {navController.navigate("productDetailsPage/$productID")}
-                    ) {
-                        Text("Back")
+                    item {
+                        Text(
+                            text = "Your cart:",
+                            style = MaterialTheme.typography.titleLarge
+                        )
+                    }
+                    items(productList) { productPair ->
+                        ProductCard(navController, productPair)
+                    }
+                    item {
+                        Button(
+                            modifier = Modifier.fillMaxWidth(),
+                            onClick = {navController.navigate("homePage")}
+                        ) {
+                            Text("Back")
+                        }
                     }
                 }
             }

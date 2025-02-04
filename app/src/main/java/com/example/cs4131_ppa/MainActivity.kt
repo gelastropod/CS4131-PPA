@@ -87,13 +87,6 @@ fun MainApp(resources: Resources) {
         }
         composable("companyDetailsPage") { CompanyDetailsPageClass.CompanyDetailsPage(navController) }
         composable("signUpPage") { SignUpPageClass.SignUpPage(navController) }
-        composable("paymentPage/{productID}",
-            arguments = listOf(navArgument("productID") {type = NavType.StringType})
-        ) { backStackEntry ->
-            val productID = backStackEntry.arguments?.getString("productID")
-            if (productID != null) {
-                PaymentPageClass.PaymentPage(navController, productID.toInt())
-            }
-        }
+        composable("paymentPage") { PaymentPageClass.PaymentPage(navController) }
     }
 }

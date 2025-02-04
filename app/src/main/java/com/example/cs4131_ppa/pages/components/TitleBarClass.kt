@@ -183,6 +183,35 @@ fun TitleBarBottomContent(navController: NavController) {
             shape = RectangleShape,
             contentPadding = PaddingValues(0.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
+            onClick = {if (route != "paymentPage") navController.navigate("paymentPage")}
+        ) {
+            Column (
+                modifier = Modifier
+                    .fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Spacer(modifier = Modifier.weight(1f))
+                Image(
+                    painter = painterResource(id = R.drawable.credit_card_outline),
+                    contentDescription = "Payment Page Icon",
+                    modifier = Modifier.size(30.dp)
+                )
+                Spacer(modifier = Modifier.weight(1f))
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(4.dp)
+                        .background(if (route == "paymentPage") Primary else Accent)
+                )
+            }
+        }
+        Button (
+            modifier = Modifier
+                .fillMaxSize()
+                .weight(1f),
+            shape = RectangleShape,
+            contentPadding = PaddingValues(0.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
             onClick = {if (route != "signUpPage") navController.navigate("signUpPage")}
         ) {
             Column (

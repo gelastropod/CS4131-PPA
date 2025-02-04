@@ -23,6 +23,7 @@ class Product(
     companion object {
         private var loadedProducts: Boolean = false
         private var productList: ArrayList<Product> = arrayListOf()
+        private var cart: ArrayList<Product> = arrayListOf()
 
         private fun dummyProduct(): Product {
             return Product(
@@ -72,6 +73,18 @@ class Product(
             }
 
             return productPairList
+        }
+
+        fun returnPairProductsCart() : ArrayList<ProductPair> {
+            return returnPairProducts(cart)
+        }
+
+        fun buyItem(ID: Int) {
+            cart.add(getProduct(ID))
+        }
+
+        fun removeItem(ID: Int) {
+            cart.remove(getProduct(ID))
         }
 
         fun getProduct(ID: Int) : Product {

@@ -64,14 +64,14 @@ class ProductDetailsPageClass {
 
                         ) {
                             Text(
-                                text = product.category, //TODO: implement programmatic category
+                                text = product.category,
                                 modifier = Modifier
                                     .padding(5.dp)
                             )
                         }
                     }
                     Text(
-                        text = product.name, //TODO: implement programmatic name
+                        text = product.name,
                         style = MaterialTheme.typography.titleLarge,
                         textAlign = TextAlign.Left,
                         modifier = Modifier.fillMaxWidth()
@@ -85,14 +85,16 @@ class ProductDetailsPageClass {
                     )
                     HorizontalDivider()
                     Text(
-                        text = product.description, //TODO: implement programmatic descriptions
+                        text = product.description,
                         textAlign = TextAlign.Left,
                         modifier = Modifier.fillMaxWidth()
                     )
                     HorizontalDivider()
 
                     Button(
-                        onClick = { navController.navigate("paymentPage/$productID") },
+                        onClick = {
+                            Product.buyItem(productID)
+                        },
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Text("Pay")
@@ -103,7 +105,21 @@ class ProductDetailsPageClass {
                             painter = painterResource(R.drawable.credit_card_outline),
                             contentDescription = "Checkout"
                         )
-
+                    }
+                    Button(
+                        onClick = {
+                            Product.removeItem(productID)
+                        },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Text("Remove from cart")
+                        Box(
+                            modifier = Modifier.width(3.dp)
+                        )
+                        Image(
+                            painter = painterResource(R.drawable.close),
+                            contentDescription = "Remove product :c"
+                        )
                     }
 
                     ElevatedCard(
@@ -122,12 +138,12 @@ class ProductDetailsPageClass {
                                 modifier = Modifier.padding(2.dp)
                             )
                             Text(
-                                text = "Brand: " + product.brand, //TODO: implement programmatic brand
+                                text = "Brand: " + product.brand,
                                 textAlign = TextAlign.Left,
                                 modifier = Modifier.fillMaxWidth()
                             )
                             Text(
-                                text = "Size: " + product.size, //TODO: implement programmatic dimensions
+                                text = "Size: " + product.size, //TODO:
                                 textAlign = TextAlign.Left,
                                 modifier = Modifier.fillMaxWidth()
                             )

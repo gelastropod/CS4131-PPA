@@ -48,7 +48,7 @@ class Product(
             val filteredProductList: ArrayList<Product> = arrayListOf()
 
             for (product in productList)
-                if (product.name.lowercase(Locale.ROOT).contains(filter.lowercase(Locale.ROOT).toRegex()))
+                if (product.name.lowercase(Locale.ROOT).contains(filter.lowercase(Locale.ROOT)) || product.category.lowercase(Locale.ROOT).contains(filter.lowercase(Locale.ROOT)))
                     filteredProductList.add(product)
 
             return filteredProductList

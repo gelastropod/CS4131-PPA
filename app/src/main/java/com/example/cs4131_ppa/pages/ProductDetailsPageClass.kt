@@ -23,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Paint
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -36,6 +37,7 @@ class ProductDetailsPageClass {
         @Composable
         fun ProductDetailsPage(navController: NavController, productID: Int) {
             var product = Product.getProduct(productID)
+            val imageResourceID = LocalContext.current.resources.getIdentifier(product.imagePath, "drawable", LocalContext.current.packageName)
             TitleBarClass.TitleBar (navController) {
                 Column(
                     modifier = Modifier
@@ -45,7 +47,7 @@ class ProductDetailsPageClass {
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Image(
-                        painter = painterResource(R.drawable.uranium), //TODO: change to correct resource
+                        painter = painterResource(imageResourceID),
                         contentDescription = "Item ID: $productID",
                         contentScale = ContentScale.Fit,
                         modifier = Modifier

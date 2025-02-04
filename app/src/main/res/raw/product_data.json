@@ -1,7 +1,7 @@
 [
   {
     "name": "Jaiket - Trekking Fleece Jacket",
-    "imagePath": "uranium",
+    "imagePath": "jaiket",
     "description": "A warm and lightweight fleece jacket that will protect you from the cold in the mountains. A staple in your backpack!",
     "category": "Apparel",
     "brand": "Nolh Taced",
@@ -12,7 +12,7 @@
   },
   {
     "name": "Kameej - Quick dry T-shirt BLACK",
-    "imagePath": "uranium",
+    "imagePath": "kameej",
     "description": "The fabric, made from recycled polyester, absorb and wicks away perspiration for a drier feeling. It dries more quickly than a cotton T-shirt.",
     "category": "Apparel",
     "brand": "Nolh Taced",
@@ -23,7 +23,7 @@
   },
   {
     "name": "Joote - Waterproof Hiking Boots",
-    "imagePath": "uranium",
+    "imagePath": "joote",
     "description": "These hiking shoes have all you need for the mountains: a sole with excellent grip, a good fit with its waterproof Mid-height upper, a protective stone guard at the front and full cushioning.",
     "category": "Footwear",
     "brand": "Quecha",
@@ -34,7 +34,7 @@
   },
   {
     "name": "Khambha - Mountain Trekking Pole",
-    "imagePath": "uranium",
+    "imagePath": "khambha",
     "description": "Simple yet very effective Push-pin adjustment system. Simply press the push-pin and off you go!",
     "category": "Accessories",
     "brand": "Forclas",
@@ -45,7 +45,7 @@
   },
   {
     "name": "Bachaav - Emergency First Aid Kit",
-    "imagePath": "uranium",
+    "imagePath": "bachaav",
     "description": "The kit's contents enable you to treat minor wounds or provide support in case of a sprain. The wide range is available in the case so you can complete it.",
     "category": "Accessories",
     "brand": "Forclas",
@@ -56,7 +56,7 @@
   },
   {
     "name": "Botal - Water Bottle with Straw BLUE",
-    "imagePath": "uranium",
+    "imagePath": "botal",
     "description": "Opens instantly with one hand, with a “straight head” pipette for drinking easily, transparent, solid, in durable plastic (0.8L). BPA free.",
     "category": "Accessories",
     "brand": "Forclas",
@@ -67,7 +67,7 @@
   },
   {
     "name": "Renakot - Hiking Rain Poncho",
-    "imagePath": "uranium",
+    "imagePath": "renakot",
     "description": "This waterproof rain cape is the essential accessory for your hikes. Quick-to-put-on, it offers long-lasting protection from the rain, with or without a bag.",
     "category": "Accessories",
     "brand": "Forclas",
@@ -79,7 +79,7 @@
   {
 
     "name": "Disha - Orienteering Compass",
-    "imagePath": "uranium",
+    "imagePath": "disha",
     "description": "Featuring a 360° rotating capsule, a compass, a ruler and a wrist strap, this small oil-filled compass will guide your first orienteering steps.",
     "category": "Accessories",
     "brand": "Geonav",
@@ -91,7 +91,7 @@
   {
 
     "name": "Thaila - Hiking Backpack",
-    "imagePath": "uranium",
+    "imagePath": "thaila",
     "description": "This hiking backpack offers optimal comfort with its padded waistband and ventilated back, equipped with AirCooling technology. It is equipped with secure pockets and a place for your water pouch.",
     "category": "Bags",
     "brand": "Quecha",
@@ -103,7 +103,7 @@
   {
 
     "name": "Ankuda - Climbing Carabiner",
-    "imagePath": "uranium",
+    "imagePath": "ankuda",
     "description": "The lightest safety carabiner. Made with aerospace grade materials.",
     "category": "Accessories",
     "brand": "Forclas",
@@ -114,7 +114,7 @@
   },
   {
     "name": "Chattaan - Climbing Shoes GREY",
-    "imagePath": "uranium",
+    "imagePath": "chattaan",
     "description": "Are you looking for a comfortable shoe with lots of grip? With its Vibram XS grip sole, this shoe is the answer.",
     "category": "Footwear",
     "brand": "DIAMOND",

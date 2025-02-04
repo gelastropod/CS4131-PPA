@@ -35,7 +35,7 @@ import com.example.cs4131_ppa.pages.model.Product
 class ProductDetailsPageClass {
     companion object {
         @Composable
-        fun ProductDetailsPage(navController: NavController, productID: Int) {
+        fun ProductDetailsPage(navController: NavController, productID: Int, fromCart: Boolean) {
             var product = Product.getProduct(productID)
             val imageResourceID = LocalContext.current.resources.getIdentifier(product.imagePath, "drawable", LocalContext.current.packageName)
             TitleBarClass.TitleBar (navController) {
@@ -106,20 +106,22 @@ class ProductDetailsPageClass {
                             contentDescription = "Checkout"
                         )
                     }
-                    Button(
-                        onClick = {
-                            Product.removeItem(productID)
-                        },
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Text("Remove from cart")
-                        Box(
-                            modifier = Modifier.width(3.dp)
-                        )
-                        Image(
-                            painter = painterResource(R.drawable.cart_arrow_up),
-                            contentDescription = "Remove product :c"
-                        )
+                    if (fromCart) {
+                        Button(
+                            onClick = {
+                                Product.removeItem(productID)
+                            },
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text("Remove from cart")
+                            Box(
+                                modifier = Modifier.width(3.dp)
+                            )
+                            Image(
+                                painter = painterResource(R.drawable.cart_arrow_up),
+                                contentDescription = "Remove product :c"
+                            )
+                        }
                     }
 
                     ElevatedCard(
@@ -143,7 +145,7 @@ class ProductDetailsPageClass {
                                 modifier = Modifier.fillMaxWidth()
                             )
                             Text(
-                                text = "Size: " + product.size, //TODO:
+                                text = "Size: " + product.size,
                                 textAlign = TextAlign.Left,
                                 modifier = Modifier.fillMaxWidth()
                             )
@@ -152,7 +154,7 @@ class ProductDetailsPageClass {
                     HorizontalDivider()
                     Button(
                         modifier = Modifier.fillMaxWidth(),
-                        onClick = {navController.navigate("homePage")}
+                        onClick = {navController.navigate(if (fromCart) "paymentPage" else "homePage")}
                     ) {
                         Text("Back")
                     }

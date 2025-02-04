@@ -23,6 +23,7 @@ import androidx.navigation.navArgument
 import com.example.cs4131_ppa.pages.CompanyDetailsPageClass
 import com.example.cs4131_ppa.ui.theme.CS4131PPATheme
 import com.example.cs4131_ppa.pages.MainPageClass
+import com.example.cs4131_ppa.pages.PaymentDonePageClass
 import com.example.cs4131_ppa.pages.PaymentPageClass
 import com.example.cs4131_ppa.pages.ProductDetailsPageClass
 import com.example.cs4131_ppa.pages.SignUpPageClass
@@ -77,16 +78,21 @@ fun MainApp(resources: Resources) {
     ) {
         composable("homePage") { MainPageClass.MainPage(navController, resources) }
         composable(
-            "productDetailsPage/{productID}",
-            arguments = listOf(navArgument("productID") {type = NavType.StringType})
+            "productDetailsPage/{productID}/{fromCart}",
+            arguments = listOf(
+                navArgument("productID") {type = NavType.StringType},
+                navArgument("fromCart") {type = NavType.StringType}
+            )
         ) { backStackEntry ->
             val productID = backStackEntry.arguments?.getString("productID")
+            val fromCart = backStackEntry.arguments?.getString("fromCart")
             if (productID != null) {
-                ProductDetailsPageClass.ProductDetailsPage(navController, productID.toInt())
+                ProductDetailsPageClass.ProductDetailsPage(navController, productID.toInt(), fromCart.equals("1"))
             }
         }
         composable("companyDetailsPage") { CompanyDetailsPageClass.CompanyDetailsPage(navController) }
         composable("signUpPage") { SignUpPageClass.SignUpPage(navController) }
         composable("paymentPage") { PaymentPageClass.PaymentPage(navController) }
+        composable("paymentDonePage") { PaymentDonePageClass.PaymentDonePage(navController) }
     }
 }

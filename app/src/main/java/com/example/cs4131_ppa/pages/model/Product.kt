@@ -87,6 +87,10 @@ class Product(
             cart.remove(getProduct(ID))
         }
 
+        fun clearItems() {
+            cart.clear()
+        }
+
         fun getProduct(ID: Int) : Product {
             return productList.get(ID)
         }

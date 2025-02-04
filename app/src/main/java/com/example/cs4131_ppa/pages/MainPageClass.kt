@@ -89,7 +89,7 @@ class MainPageClass {
                         )
                     }
                     items(productList) { productPair ->
-                        ProductCard(navController, productPair)
+                        ProductCard(navController, productPair, false)
                     }
                 }
             }
@@ -98,7 +98,7 @@ class MainPageClass {
 }
 
 @Composable
-fun ProductCard(navController: NavController, productPair: ProductPair) {
+fun ProductCard(navController: NavController, productPair: ProductPair, fromCart: Boolean) {
     Row (
         modifier = Modifier
             .fillMaxWidth()
@@ -113,7 +113,7 @@ fun ProductCard(navController: NavController, productPair: ProductPair) {
             modifier = Modifier
                 .fillMaxSize()
                 .weight(1f),
-            onClick = {navController.navigate("productDetailsPage/${productPair.first.productID}")}
+            onClick = {navController.navigate("productDetailsPage/${productPair.first.productID}/${if (fromCart) "1" else "0"}")}
         ) {
             Box (
                 modifier = Modifier
@@ -131,7 +131,7 @@ fun ProductCard(navController: NavController, productPair: ProductPair) {
                 modifier = Modifier
                     .fillMaxSize()
                     .weight(1f),
-                onClick = {navController.navigate("productDetailsPage/${productPair.second.productID}")}
+                onClick = {navController.navigate("productDetailsPage/${productPair.second.productID}/${if (fromCart) "1" else "0"}")}
             ) {
                 Box(
                     modifier = Modifier

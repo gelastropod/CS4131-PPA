@@ -19,7 +19,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import com.example.cs4131_ppa.R
 import com.example.cs4131_ppa.pages.components.TitleBarClass
 import com.example.cs4131_ppa.pages.model.Product
@@ -46,11 +45,12 @@ class PaymentPageClass {
                         )
                     }
                     items(productList) { productPair ->
-                        ProductCard(navController, productPair)
+                        ProductCard(navController, productPair, true)
                     }
                     item {
                         Button(
                             onClick = {
+                                Product.clearItems()
                                 navController.navigate("homePage")
                             },
                             modifier = Modifier.fillMaxWidth()

@@ -122,5 +122,17 @@
     "price": 99.90,
     "rating": 4.7,
     "productID": 10
+  },
+  {
+    "name": "Taul - Kettlebell",
+    "imagePath": "taul",
+    "description": "A friend to all floors, its rubber base softens impacts. Its ergonomic design provides an excellent grip and keeps you safe when you need to drop it.",
+    "category": "Gym equipment",
+    "brand": "GymCore",
+    "size": "8kg",
+    "price": 29.90,
+    "rating": 4.9,
+    "productID": 11
   }
+
 ]

@@ -50,7 +50,7 @@ class SignUpPageClass {
                     )
                     TextField(
                         value = usernameState.value,
-                        onValueChange = { newText -> usernameState.value = newText },
+                        onValueChange = { newText -> usernameState.value = if (!newText.contains("\n")) newText else usernameState.value },
                         label = { Text("Enter Username") },
                         placeholder = { Text("Username...") }
                     )

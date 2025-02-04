@@ -1,5 +1,6 @@
 package com.example.cs4131_ppa.pages
 
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -14,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.DpSize
@@ -28,6 +30,12 @@ class PaymentPageClass {
         @Composable
         fun PaymentPage(navController: NavController) {
             val productList = Product.returnPairProductsCart()
+            val context = LocalContext.current
+
+            var totalPrice = 0f
+            for (p in productList) {
+                totalPrice += p.first.price + p.second.price
+            }
 
             TitleBarClass.TitleBar (navController) { sizeState ->
                 LazyColumn (
@@ -40,7 +48,7 @@ class PaymentPageClass {
                 ) {
                     item {
                         Text(
-                            text = "Your cart:",
+                            text = "Your cart: $%.2f".format(totalPrice),
                             style = MaterialTheme.typography.titleLarge
                         )
                     }
@@ -50,8 +58,12 @@ class PaymentPageClass {
                     item {
                         Button(
                             onClick = {
-                                Product.clearItems()
-                                navController.navigate("homePage")
+                                if (productList.size == 0) {
+                                    Toast.makeText(context, "Cart is empty!", Toast.LENGTH_SHORT).show()
+                                } else {
+                                    navController.navigate("paymentDonePage")
+                                    Product.clearItems()
+                                }
                             },
                             modifier = Modifier.fillMaxWidth()
                         ) {

@@ -63,8 +63,17 @@ class MainPageClass {
                         TextField(
                             value = filterState.value,
                             onValueChange = { newText -> filterState.value = newText },
-                            label = { Text("Enter Filter") },
-                            placeholder = { Text("Filter...") },
+                            placeholder = {
+                                Row (
+                                    horizontalArrangement = Arrangement.spacedBy(5.dp)
+                                ) {
+                                    Image(
+                                        painter = painterResource(R.drawable.tag_search_outline),
+                                        contentDescription = "Search"
+                                    )
+                                    Text("Search for products...")
+                                }
+                            },
                             modifier = Modifier
                                 .fillMaxWidth(),
                             trailingIcon = {
@@ -81,14 +90,6 @@ class MainPageClass {
                     }
                     items(productList) { productPair ->
                         ProductCard(navController, productPair)
-                    }
-                    item {
-                        Button(
-                            modifier = Modifier.fillMaxWidth(),
-                            onClick = {navController.navigate("paymentPage")}
-                        ) {
-                            Text("Go to cart")
-                        }
                     }
                 }
             }

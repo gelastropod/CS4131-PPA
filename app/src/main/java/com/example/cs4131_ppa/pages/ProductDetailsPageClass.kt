@@ -97,12 +97,12 @@ class ProductDetailsPageClass {
                         },
                         modifier = Modifier.fillMaxWidth()
                     ) {
-                        Text("Pay")
+                        Text("Add to cart")
                         Box(
                             modifier = Modifier.width(3.dp)
                         )
                         Image(
-                            painter = painterResource(R.drawable.credit_card_outline),
+                            painter = painterResource(R.drawable.cart_arrow_down),
                             contentDescription = "Checkout"
                         )
                     }
@@ -117,7 +117,7 @@ class ProductDetailsPageClass {
                             modifier = Modifier.width(3.dp)
                         )
                         Image(
-                            painter = painterResource(R.drawable.close),
+                            painter = painterResource(R.drawable.cart_arrow_up),
                             contentDescription = "Remove product :c"
                         )
                     }

@@ -192,7 +192,7 @@ fun TitleBarBottomContent(navController: NavController) {
             ) {
                 Spacer(modifier = Modifier.weight(1f))
                 Image(
-                    painter = painterResource(id = R.drawable.credit_card_outline),
+                    painter = painterResource(id = R.drawable.cart),
                     contentDescription = "Payment Page Icon",
                     modifier = Modifier.size(30.dp)
                 )

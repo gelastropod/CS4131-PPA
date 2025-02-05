@@ -56,7 +56,7 @@ class SignUpPageClass {
                     )
                     TextField(
                         value = passwordState.value,
-                        onValueChange = { newText -> passwordState.value = newText },
+                        onValueChange = { newText -> passwordState.value = if (!newText.contains("\n")) newText else passwordState.value },
                         label = { Text("Enter Password") },
                         visualTransformation = if (isPasswordVisible.value) {
                             VisualTransformation.None

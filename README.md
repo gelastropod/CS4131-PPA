@@ -43,7 +43,7 @@
 - Company details & contact info  
 ![Company Details Page Image](companyDetailsPageImage-1.png "Company Details Page")
 - Sign up page  
-![Sign Up Page Image](signUpPageImage.png "Sign Up Page")
+![Sign Up Page Image](signUpPageImage-1.png "Sign Up Page")
 - Payment page (cart system?)  
 ![Payment Page Image](paymentPageImage.png "Payment Page")
 

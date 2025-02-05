@@ -39,9 +39,9 @@
 - Main page  
 ![Home Page Image](homePageImage.png "Home Page")
 - Product details  
-![Product Details Page Image](productDetailsPageImage.png "Product Details Page")
+![Product Details Page Image](productDetailsPageImage-1.png "Product Details Page")
 - Company details & contact info  
-![Company Details Page Image](companyDetailsPageImage.png "Company Details Page")
+![Company Details Page Image](companyDetailsPageImage-1.png "Company Details Page")
 - Sign up page  
 ![Sign Up Page Image](signUpPageImage.png "Sign Up Page")
 - Payment page (cart system?)  

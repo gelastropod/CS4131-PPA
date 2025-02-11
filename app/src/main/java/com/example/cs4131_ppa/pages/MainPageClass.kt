@@ -33,9 +33,9 @@ import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.cs4131_ppa.R
-import com.example.cs4131_ppa.pages.components.TitleBarClass
-import com.example.cs4131_ppa.pages.model.Product
-import com.example.cs4131_ppa.pages.model.ProductPair
+import com.example.cs4131_ppa.components.TitleBarClass
+import com.example.cs4131_ppa.model.Product
+import com.example.cs4131_ppa.model.ProductPair
 
 var itemHeight = 350
 

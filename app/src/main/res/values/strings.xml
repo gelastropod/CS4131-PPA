@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Peak Performance Gear</string>
-    <string name="company_desc">At Peak Performance Gear, YOU come first. \n\nOur dedication to quality is unparalleled, since the production of our very first pair of  hiking boots, to our current selection of sports equipment of the finest quality. From the carabiners that hold your weight, to the puffer jackets that will keep you warm: quality is our upmost priority.</string>
+    <string name="company_desc">At Peak Performance Gear, YOU come first. \n\nOur dedication to quality is unparalleled, since the production of our very first pair of  hiking boots, to our current selection of sports equipment of the finest quality. From the carabiners that hold your weight, to the puffer jackets that will keep you warm: our innovation drives quality
+        .</string>
     <string name="tagline">Choose quality. \nChoose Peak Performance Gear.</string>
     <string name="contact_title">Get in touch!</string>
-    <string name="contact_info">Email:\ncontact@peakperformance.co\nInstagram:\n@WeArePeak__\nPlease leave us a 5 star review!</string>
+    <string name="contact_info">Email:\ncontact@peakperformance.co\nInstagram:\n@WeArePeak__</string>
 </resources>

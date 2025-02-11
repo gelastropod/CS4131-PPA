@@ -30,8 +30,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.cs4131_ppa.R
-import com.example.cs4131_ppa.pages.components.TitleBarClass
-import com.example.cs4131_ppa.pages.model.Product
+import com.example.cs4131_ppa.components.TitleBarClass
+import com.example.cs4131_ppa.model.Product
 import com.gowtham.ratingbar.RatingBar
 import com.gowtham.ratingbar.RatingBarStyle
 import com.gowtham.ratingbar.StepSize

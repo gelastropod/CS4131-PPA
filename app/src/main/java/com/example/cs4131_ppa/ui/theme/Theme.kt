@@ -63,7 +63,7 @@ fun CS4131PPATheme(darkTheme : Boolean = isSystemInDarkTheme(), content : @Compo
         //useDynamicColours && !darkTheme -> dynamicLightColorScheme(LocalContext.current)
         //darkTheme -> DarkColorScheme
         darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+        else -> DarkColorScheme
     }
 
     MaterialTheme(

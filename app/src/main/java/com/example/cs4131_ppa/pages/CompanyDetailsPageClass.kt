@@ -20,7 +20,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.cs4131_ppa.R
-import com.example.cs4131_ppa.pages.components.TitleBarClass
+import com.example.cs4131_ppa.components.TitleBarClass
 
 class CompanyDetailsPageClass {
     companion object {

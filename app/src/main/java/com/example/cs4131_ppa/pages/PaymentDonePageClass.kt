@@ -12,7 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.cs4131_ppa.pages.components.TitleBarClass
+import com.example.cs4131_ppa.components.TitleBarClass
 
 class PaymentDonePageClass {
     companion object {
